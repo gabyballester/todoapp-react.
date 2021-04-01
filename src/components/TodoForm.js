@@ -9,10 +9,12 @@ export default function TodoForm(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // props.onSubmit({
-    //   id: Math.floor(Math.random()*10000),
-    //   text: input
-    // })
+    
+    props.onSubmit({
+      id: Math.floor(Math.random()*10000),
+      text: input
+    })
+
     setInput('')
   }
 
@@ -25,7 +27,7 @@ export default function TodoForm(props) {
         className="todo-input"
         onChange={handleChange}
       />
-      <button className="todo-button">Add todo</button>
+      <button className="todo-button">Añadir tarea</button>
     </form>
   )
 }
