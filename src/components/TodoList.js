@@ -23,13 +23,21 @@ const completeTodo = id =>{
     return todo
   })
   setTodos(updatedTodos)
+};
+
+const removeTodo = id => {
+  const removeArray = [...todos].filter(todo=>todo.id !== id)
+  setTodos(removeArray);
 }
   return (
     <div>
       <h1>¿Que planes tienes hoy?</h1>
       <TodoForm onSubmit={addTodo}/>
-      <Todo todos={todos}
-      completeTodo={completeTodo}/>
+      <Todo 
+      todos={todos}
+      completeTodo={completeTodo}
+      removeTodo={removeTodo}
+      />
     </div>
   )
 }
