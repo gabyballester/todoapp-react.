@@ -1,0 +1,169 @@
+ // --- Variables ---
+ $mainRadius: 10px;
+ $secondRadius: 5px;
+ //----
+ $mediaBreackPoint: 430px;
+ $inputButtonWidth: 320px;
+ //----
+ $mainColor: #161a2b;
+ $lightColor: #e4e4e4;
+ //----
+ $mainFontSize: 26px;
+ $secondFontSize: 16px;
+
+
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+     'Lucida Sans', Arial, sans-serif;
+ }
+
+ html {
+   height: 100vh;
+ }
+
+ body {
+   background: linear-gradient(90deg,
+       rgb(120, 255, 244) 0%,
+       rgb(100, 110, 255) 100%);
+ }
+
+ .todo-app {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   max-width: 520px;
+   background: $mainColor;
+   text-align: center;
+   margin: 128px auto;
+   border-radius: $mainRadius;
+   padding-bottom: 32px;
+ }
+
+ h1 {
+   margin: 32px 0;
+   color: #fff;
+   font-size: $mainFontSize;
+ }
+
+ .complete {
+   text-decoration: line-through;
+   opacity: 0.4;
+ }
+
+ .todo-form {
+   margin-bottom: 32px;
+ }
+
+ .todo-input {
+   padding: 14px 32px 14px 16px;
+   border-radius: $secondRadius 0 0 $secondRadius;
+   border: 2px solid white;
+   outline: none;
+   background: transparent;
+   color: #fff;
+   font-size: $secondFontSize;
+
+   @media (max-width: $mediaBreackPoint) {
+     width: 90%;
+     border-radius: $secondRadius $secondRadius 0px 0px;
+   }
+ }
+
+ .todo-input::placeholder {
+   font-size: $secondFontSize;
+   color: white;
+ }
+
+ .todo-button {
+   padding: 16px;
+   border: none;
+   border-radius: 0 $secondRadius $secondRadius 0;
+   cursor: pointer;
+   outline: none;
+   background: white;
+   color: $mainColor;
+   font-size: $secondFontSize;
+   font-weight: 900;
+   text-transform: capitalize;
+
+   @media (max-width: $mediaBreackPoint) {
+     border-radius: 0 0 $secondRadius $secondRadius;
+     align-self: center;
+     display: block;
+     width: 90%;
+     margin: 0 auto;
+   }
+ }
+
+
+
+
+ .todo-input.edit {
+   border: 2px solid #149fff;
+ }
+
+ .todo-button.edit {
+   background: linear-gradient(90deg,
+       rgba(20, 159, 255, 1) 0%,
+       rgba(17, 122, 255, 1) 100%);
+   padding: 16px 22px;
+ }
+
+ .todo-container {
+   display: flex;
+   flex-direction: row;
+   position: relative;
+ }
+
+ .todo-row {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 4px auto;
+   color: rgb(255, 255, 255);
+   background: linear-gradient(90deg,
+       rgb(255, 129, 40) 0%,
+       rgb(241, 75, 9) 100%);
+
+   padding: 16px;
+   border-radius: $secondRadius;
+   max-width: 90%;
+   font-size: $secondFontSize;
+ }
+
+ .todo-row:nth-child(4n + 1) {
+   background: linear-gradient(90deg,
+       rgb(114, 43, 255) 0%,
+       rgb(74, 0, 121) 100%);
+ }
+
+ .todo-row:nth-child(4n + 2) {
+   background: linear-gradient(90deg,
+       rgb(0, 158, 124) 0%,
+       rgb(0, 102, 54) 100%);
+ }
+
+ .todo-row:nth-child(4n + 3) {
+   background: linear-gradient(90deg,
+       rgb(20, 149, 255) 0%,
+       rgb(11, 75, 158) 100%);
+ }
+
+ .icons {
+   display: flex;
+   align-items: center;
+   font-size: $secondFontSize;
+   cursor: pointer;
+ }
+
+ .delete-icon {
+   margin-right: 5px;
+   color: #fff;
+ }
+
+ .edit-icon {
+   color: #fff;
+ }
