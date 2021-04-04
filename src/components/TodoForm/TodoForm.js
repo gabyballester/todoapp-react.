@@ -36,7 +36,7 @@ export default function TodoForm(props) {
         onChange={handleChange}
         ref={inputRef}
       />
-      <button className="todo-button">{props.edit ? "Guardar" : "Añadir"}</button>
+      <button className="todo-button">{props.edit ? "Editar" : "Añadir"}</button>
     </form>
   )
 }
