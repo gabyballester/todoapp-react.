@@ -25,14 +25,16 @@ export default function TodoForm(props) {
     setInput('')
   }
 
- 
+
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input type="text"
+      <input
+        data-testid="input"
+        type="text"
         placeholder={props.edit ? "Edita la tarea" : "Añade la tarea"}
         value={input}
         name="text"
-        className={props.edit ? "todo-input todo-input-edit": "todo-input"}
+        className={props.edit ? "todo-input todo-input-edit" : "todo-input"}
         onChange={handleChange}
         ref={inputRef}
       />
