@@ -10,6 +10,8 @@
  //----
  $mainFontSize: 26px;
  $secondFontSize: 16px;
+ //----
+ $transition: 0.5s;
 
 
  * {
@@ -70,8 +72,8 @@
  }
 
  .todo-input-edit {
-  color: blue; 
-  border-color: blue;
+   color: blue;
+   border-color: blue;
  }
 
  .todo-input::placeholder {
@@ -124,55 +126,70 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+   justify-content: center;
    margin: 4px auto;
    color: rgb(255, 255, 255);
    background: linear-gradient(90deg,
        rgb(255, 129, 40) 0%,
        rgb(241, 75, 9) 100%);
-
-   padding: 16px;
+   transition: background $transition;
+   height: 46px;
    border-radius: $secondRadius;
    max-width: 90%;
    font-size: $secondFontSize;
 
    .div-task {
      width: 100%;
+     height: 100%;
      display: flex;
      justify-content: space-between;
      margin-right: 15px;
-   
-     .task{
-       margin-left: 10px;
+     align-items: center;
+     cursor: pointer;
+
+     .task {
+       margin-left: 20px;
+
      }
 
-   .complete {
-     text-decoration: line-through;
-     opacity: 0.4
-   }
+     .complete {
+       text-decoration: line-through;
+       opacity: 0.8;
+     }
 
-   .incomplete {
-     font-weight: 900;
-   }
+     .incomplete {
+       font-weight: 900;
+     }
 
-   .badge {
-     width: 120px;
-     padding: 3px 10px;
-     border-radius: 10px;
-     margin-right: 5px;
-     font-weight: bolder;
-   }
+     .badge {
+       width: 120px;
+       height: 22px;
+       font-size: 13px;
+       padding: 3px 10px;
+       border-radius: 10px;
+       margin-right: 5px;
+       font-weight: bolder;
+       -webkit-box-shadow: 0px 2px 17px -4px rgba(0, 0, 0, 1);
+       -moz-box-shadow: 0px 2px 17px -4px rgba(0, 0, 0, 1);
+       box-shadow: 0px 2px 17px -4px rgba(0, 0, 0, 1);
+     }
 
-   .completed-badge {
-     background-color: rgb(32, 214, 32) !important;
-     
-   }
+     .completed-badge {
+       background-color: rgb(32, 214, 32) !important;
+       transition: background-color $transition;
 
-   .incompleted-badge {
-     background-color: rgb(128, 128, 128);
-     color: white;
+     }
 
+     .incompleted-badge {
+       background-color: rgb(128, 128, 128);
+       color: white;
+       transition: background-color $transition;
+     }
    }
-  }
+ }
+
+ .todo-row:hover {
+   opacity: 0.8;
  }
 
  .todo-row:nth-child(4n + 1) {
@@ -193,20 +210,29 @@
        rgb(11, 75, 158) 100%);
  }
 
-
+ .todo-row-completed {
+   background: gray !important;
+   transition: background $transition;
+ }
 
  .icons {
    display: flex;
    align-items: center;
    font-size: $secondFontSize;
    cursor: pointer;
+   margin-right: 10px;
+   justify-content: space-between;
  }
 
  .delete-icon {
    margin-right: 5px;
    color: #fff;
+   height: 1.5rem;
+   width: 1.5rem;
  }
 
  .edit-icon {
    color: #fff;
+   height: 1.5rem;
+   width: 1.5rem;
  }

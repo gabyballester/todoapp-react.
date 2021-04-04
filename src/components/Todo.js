@@ -25,12 +25,13 @@ export default function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   return todos.map((todo, index) => (
 
     <div
-      className='todo-row'
+      className={todo.isComplete ? 'todo-row todo-row-completed' : 'todo-row'}
       key={index}>
       <div
         className='div-task'
         key={todo.id}
-        onClick={() => completeTodo(todo.id)}>
+        onClick={() => completeTodo(todo.id)}
+      >
         <span
           className={todo.isComplete ? 'task complete' : 'task incomplete'}
         >{todo.text}</span>
