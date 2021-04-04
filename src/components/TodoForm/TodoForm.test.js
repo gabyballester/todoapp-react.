@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TodoForm from './TodoForm';
-import { render } from '@testing-library/react';
+import { render,cleanup } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
+import renderer from "react-test-renderer";
+
+afterEach(cleanup);
 
 it("renders without crashing", () => {
   const form = document.createElement("form");
@@ -12,4 +15,9 @@ it("renders without crashing", () => {
 it("renders input correctly", () => {
   const {getByTestId} = render(<TodoForm></TodoForm>)
   expect(getByTestId('input')).toHaveTextContent('');
+})
+
+it("matches snapshot", ()=>{
+  const tree = renderer.create(<TodoForm></TodoForm>).toJSON();
+  expect(tree).toMatchSnapshot();
 })
