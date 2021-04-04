@@ -48,10 +48,7 @@
    font-size: $mainFontSize;
  }
 
- .complete {
-   text-decoration: line-through;
-   opacity: 0.4;
- }
+
 
  .todo-form {
    margin-bottom: 32px;
@@ -70,6 +67,11 @@
      width: 90%;
      border-radius: $secondRadius $secondRadius 0px 0px;
    }
+ }
+
+ .todo-input-edit {
+  color: blue; 
+  border-color: blue;
  }
 
  .todo-input::placeholder {
@@ -132,6 +134,45 @@
    border-radius: $secondRadius;
    max-width: 90%;
    font-size: $secondFontSize;
+
+   .div-task {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     margin-right: 15px;
+   
+     .task{
+       margin-left: 10px;
+     }
+
+   .complete {
+     text-decoration: line-through;
+     opacity: 0.4
+   }
+
+   .incomplete {
+     font-weight: 900;
+   }
+
+   .badge {
+     width: 120px;
+     padding: 3px 10px;
+     border-radius: 10px;
+     margin-right: 5px;
+     font-weight: bolder;
+   }
+
+   .completed-badge {
+     background-color: rgb(32, 214, 32) !important;
+     
+   }
+
+   .incompleted-badge {
+     background-color: rgb(128, 128, 128);
+     color: white;
+
+   }
+  }
  }
 
  .todo-row:nth-child(4n + 1) {
@@ -151,6 +192,8 @@
        rgb(20, 149, 255) 0%,
        rgb(11, 75, 158) 100%);
  }
+
+
 
  .icons {
    display: flex;

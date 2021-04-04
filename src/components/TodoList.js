@@ -45,7 +45,7 @@ export default function TodoList() {
 
   return (
     <div>
-      <h1>¿Que planes tienes hoy?</h1>
+      <h1>Lista de tareas</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}
