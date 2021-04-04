@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import TodoForm from "./TodoForm";
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
@@ -25,10 +25,20 @@ export default function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   return todos.map((todo, index) => (
 
     <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+      className='todo-row'
       key={index}>
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
+      <div
+        className='div-task'
+        key={todo.id}
+        onClick={() => completeTodo(todo.id)}>
+        <span
+          className={todo.isComplete ? 'task complete' : 'task incomplete'}
+        >{todo.text}</span>
+        {todo.isComplete ?
+          (<span className="badge completed-badge">Completed</span>)
+          :
+          (<span className="badge incompleted-badge">Incompleted</span>)
+        }
       </div>
 
       <div className="icons">
