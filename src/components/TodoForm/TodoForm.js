@@ -25,7 +25,6 @@ export default function TodoForm(props) {
     setInput('')
   }
 
-
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
       <input
