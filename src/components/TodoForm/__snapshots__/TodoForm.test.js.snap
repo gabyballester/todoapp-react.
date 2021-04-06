@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<form
+  className="todo-form"
+  onSubmit={[Function]}
+>
+  <input
+    className="todo-input"
+    data-testid="input"
+    name="text"
+    onChange={[Function]}
+    placeholder="Añade la tarea"
+    type="text"
+    value=""
+  />
+  <button
+    className="todo-button"
+  >
+    Añadir
+  </button>
+</form>
+`;
