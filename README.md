@@ -1,4 +1,7 @@
-# TodoApp React Assessment Project
+# TodoApp React Project
+
+## Technology used
+### `React`
 
 
 ## Dependencies installation
