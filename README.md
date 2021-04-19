@@ -1,4 +1,4 @@
-# TodoApp React Project
+# TodoApp Project
 
 ## Technology used
 ### `React`
